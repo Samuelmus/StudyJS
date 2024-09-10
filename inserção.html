@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var objetos = Array('Cadeira', 'Impressora', 'Garfo')
+
+    function Ordernar(){
+        
+        console.log(objetos.sort())
+    }
+   
+
+    function Adicionar(){
+        var campo_texto = document.getElementById('campo').value
+        console.log(campo_texto)
+
+        if(campo_texto === ''){
+            alert('A caixa de texto está vazia')
+        }else{
+
+            if(objetos.indexOf(campo_texto) !== -1){
+                alert('Item já foi adicionado')
+            }else{
+                objetos.push(campo_texto)
+                console.log(objetos)
+                document.getElementById('campo').value = ''
+            
+
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+</script>
+<body>
+    
+    <label for="campo">Insira item</label><br>
+    <input type="text" id="campo">
+
+    <button onclick="Adicionar()">Adicionar</button>
+    <button onclick="Ordernar()">Ordenadar</button>
+    
+</body>
+</html>
